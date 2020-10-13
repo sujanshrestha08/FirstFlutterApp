@@ -23,15 +23,18 @@ class MyApp extends StatelessWidget {
             Text('The question!'),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: answerQuestion,
+              onPressed:
+                  answerQuestion, //This is the name of the function which you should execute when the user presses the button to onPressed, were passing the name of the function to OnPressed and to the Raised button and not the result of the function. Name instead of the function super important.
             ),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: answerQuestion,
+              onPressed: () => print('Answer 2 chosen'),
             ),
             RaisedButton(
               child: Text('Answer 3'),
-              onPressed: answerQuestion,
+              onPressed: () {
+                print('Answer 3 choosen');
+              },
             ),
           ],
         ),
