@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
 
-  void answerQuestion() {
-    questionIndex = questionIndex + 1;
-    print(questionIndex);
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
+    print(_questionIndex);
   }
 
   @override
@@ -31,13 +35,13 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(
-              questions[questionIndex],
+            Question(
+              questions[_questionIndex],
             ),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed:
-                  answerQuestion, //This is the name of the function which you should execute when the user presses the button to onPressed, were passing the name of the function to OnPressed and to the Raised button and not the result of the function. Name instead of the function super important.
+                  _answerQuestion, //This is the name of the function which you should execute when the user presses the button to onPressed, were passing the name of the function to OnPressed and to the Raised button and not the result of the function. Name instead of the function super important.
             ),
             RaisedButton(
               child: Text('Answer 2'),
