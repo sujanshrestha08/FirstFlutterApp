@@ -49,10 +49,10 @@ class _MyAppState extends State<MyApp> {
             Question(
               questions[_questionIndex]['questionText'],
             ),
-            (questions[_questionIndex]['answers'] as List<String>)
+            ...(questions[_questionIndex]['answers'] as List<String>)
                 .map((answer) {
-              return Answer(answer);
-            })
+              return Answer(_answerQuestion, answer);
+            }).toList()
           ],
         ),
       ),
