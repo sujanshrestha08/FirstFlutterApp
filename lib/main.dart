@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './question.dart';
+import './answer.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,21 +39,9 @@ class _MyAppState extends State<MyApp> {
             Question(
               questions[_questionIndex],
             ),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed:
-                  _answerQuestion, //This is the name of the function which you should execute when the user presses the button to onPressed, were passing the name of the function to OnPressed and to the Raised button and not the result of the function. Name instead of the function super important.
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: () => print('Answer 2 chosen'),
-            ),
-            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: () {
-                print('Answer 3 choosen');
-              },
-            ),
+            Answer(),
+            Answer(),
+            Answer(),
           ],
         ),
       ),
